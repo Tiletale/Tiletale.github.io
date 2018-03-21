@@ -1,9 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>test</title>
+	<title>123</title>
+	<style type="text/css">body {
+		margin: 0;
+	}</style>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-	123test
+	<script type="text/javascript" src="game4man_core.js"></script>
+	<script type="text/javascript">
+		var gm = g4m.grapicsManager,
+			pm = g4m.positionManager,
+			ajax = new XMLHttpRequest;
+		ajax.open('GET', "localization/languages.json");
+
+		ajax.onload = function () {
+			console.log(JSON.parse(ajax.responceText));
+		}
+
+		ajax.send();
+		var width = 800;
+		var height = 500;
+		var all_languages = {
+			"ru-RU": {
+				playBtn: "Играть",
+				optionsBtn: "Настройки",
+				creditsBtn: "Создатель",
+				loadingText: "Загрузка",
+				loadedText: "Загружено",
+				backBtn: "Назад",
+			},
+			"en-EN": {
+				playBtn: "Play",
+				optionsBtn: "Options",
+				creditsBtn: "Credits",
+				loadingText: "Loading",
+				loadedText: "Loaded",
+				backBtn: "Back",
+			}
+		};
+		var ru = 'ru-RU';
+		var en = 'en-EN';
+		var lang = en;
+
+		var game = function () {
+			var scene = g4m.newScene([width, height], "mainGameEvent", 'background-color: black');
+
+			var player = g4m.newObject({
+				type: 'rect',
+				bg_color: 'white',
+				width: 50,
+				height: 50
+			});
+
+			scene.insertObject(player);
+
+			scene.startScene();
+		}
+		var preloader = function () {
+			var scene2 = g4m.newScene([width, height], "preloader", 'background-color: black');
+
+			var options = {
+				type: 'txt',
+				attrs: '[{"name":"id", "val":"progress"}]',
+				style: 'color: white; font-size: 25px; font-weight: bold; font-family: "Montserrat";',
+				position: pm.pos([300, 250]),
+				value: 'Загрузка...'
+			};
+
+			txt = g4m.newObject(options)
+
+			scene2.insertObject(txt);
+
+			var i = 0;
+			var loading = setInterval(function () {
+				i++;
+				options.value = [all_languages[lang].loadingText + '...', all_languages[lang].loadedText + ' ' + i + '%'];
+				txt.remove();
+				txt = g4m.newObject(options)
+				scene2.insertObject(txt);
+				if (i >= 100) {
+					setTimeout(game, 1000);
+					gm.fade(scene2, 100);
+					clearInterval(loading);
+				}
+			}, 1000/80);
+
+			scene2.startScene();
+		}
+		var options = function () {
+			var scene4 = g4m.newScene([width, height], "options", 'background-color: black');
+
+			var back = g4m.newObject({
+				type: 'txt',
+				value: all_languages[lang].backBtn,
+				position: pm.pos([0, 0]),
+				class: 'menu_item'
+			});
+
+			back.click(function () {
+				scene4.remove();
+				menu();
+			});
+
+			scene4.insertObject(back);
+
+			scene4.startScene();
+		};
+		var credits = function () {
+			var scene4 = g4m.newScene([width, height], "credits", 'background-color: black');
+
+			var back = g4m.newObject({
+				type: 'txt',
+				value: all_languages[lang].backBtn,
+				position: pm.pos([0, 0]),
+				class: 'menu_item'
+			});
+
+			back.click(function () {
+				console.log(g4m.currentScene);
+			});
+
+			scene4.insertObject(back);
+
+			scene4.startScene();
+
+
+		};
+		var menu = function () {
+			var scene3 = g4m.newScene([width, height], "mainMenu", 'background-color: black');
+
+			var objs = [];
+			var res = [];
+			objs['title'] = {
+				type: 'txt',
+				value: 'Fourth dimension',
+				position: pm.pos([250, 400]),
+				class: 'menu_title'
+			};
+			objs['play'] = {
+				type: 'txt',
+				value: all_languages[lang].playBtn,
+				position: pm.pos([350, 300]),
+				class: 'menu_item'
+			};
+			objs['options'] = {
+				type: 'txt',
+				value: all_languages[lang].optionsBtn,
+				position: pm.pos([325, 200]),
+				class: 'menu_item'
+			};
+			objs['credits'] = {
+				type: 'txt',
+				value: all_languages[lang].creditsBtn,
+				position: pm.pos([325, 100]),
+				class: 'menu_item'
+			};
+
+			for (i in objs) {
+				res[i] = g4m.newObject(objs[i]);
+				scene3.insertObject(res[i]);
+			}
+
+			res['play'].click(function () {
+				scene3.remove();
+				preloader();
+			});
+
+			res['options'].click(function () {
+				scene3.remove();
+				options();
+			});
+
+			res['credits'].click(function () {
+				scene3.remove();
+				credits();
+			});
+
+			scene3.startScene();
+		}
+		menu();
+	</script>
 </body>
 </html>

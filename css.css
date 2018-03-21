@@ -1,0 +1,9 @@
+.menu_item {
+	font-size: 30px; font-family: "Montserrat"; font-weight: bold; color: white; cursor: pointer; border-bottom: 3px solid white; transition: 1s all;
+}
+.menu_item:hover {
+	border-bottom: 3px solid purple;
+}
+.menu_title {
+	font-family: 'Indie Flower'; color: white; font-size: 40px; font-weight: bold; cursor: default;
+}
