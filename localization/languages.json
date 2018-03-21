@@ -1,5 +1,18 @@
 {
-	"ru":{
-		"playBtn": "������"
+	"ru-RU": {
+		"playBtn": "Играть",
+		"optionsBtn": "Настройки",
+		"creditsBtn": "Создатель",
+		"loadingText": "Загрузка",
+		"loadedText": "Загружено",
+		"backBtn": "Назад",
+	},
+	"en-EN": {
+		"playBtn": "Play",
+		"optionsBtn": "Options",
+		"creditsBtn": "Credits",
+		"loadingText": "Loading",
+		"loadedText": "Loaded",
+		"backBtn": "Back",
 	}
 }
