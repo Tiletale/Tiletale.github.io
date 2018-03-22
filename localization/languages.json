@@ -6,6 +6,54 @@
 		"loadingText": "Загрузка",
 		"loadedText": "Загружено",
 		"backBtn": "Назад",
+		"translateText": "Внимание: Если вы увидите перевод на англ., то у вас может потечь кровь из глаз",
+		"langBtn": "Язык",
+		"creditsText": [
+			"Fourth dimension",
+			"Игра разработана одним человеком",
+			"Flomaster'ом",
+			"Перевод: Гугл переводчик",
+			"Специально для этой игры был разработан движок game4man",
+			"Youtube-канал создателя:",
+			"https://www.youtube.com/channel/UCFxALLEypCPk4F2jf8z5eOQ"
+		],
+		"cast": {
+			"chapter": {
+				"1": {
+					"1": {
+						"1": {
+							"who": "Вы",
+							"message": "Что?"
+						},
+						"2": {
+							"who": "Вы",
+							"message": "Где я?"
+						},
+						"3": {
+							"who": "Вы",
+							"message": "Пустота..."
+						},
+						"4": {
+							"who": "Вы",
+							"message": "Я попробую представить,"
+						},
+						"5": {
+							"who": "Вы",
+							"message": "Представить себя дома."
+						},
+						"6": {
+							"who": "Вы",
+							"message": "Дома, в тепле и уюте..."
+						}
+					}
+				}
+			},
+			"nextBtn": "Далее",
+			"end1": "Кат-лайн #",
+			"end2": ", часть #",
+			"end3": ", глава #",
+			"end4": " закончился"
+		}
 	},
 	"en-EN": {
 		"playBtn": "Play",
@@ -14,5 +62,53 @@
 		"loadingText": "Loading",
 		"loadedText": "Loaded",
 		"backBtn": "Back",
+		"translateText": "Attention: If you will see a translation in English, then you can leak blood from the eyes",
+		"langBtn": "Language",
+		"creditsText": [
+			"Fourth dimension",
+			"The game is developed by one person",
+			"By Flomaster",
+			"Translation: Google translator",
+			"Especially for this game was developed engine game4man",
+			"Youtube-channel of the creator:",
+			"https://www.youtube.com/channel/UCFxALLEypCPk4F2jf8z5eOQ"
+		],
+		"cast": {
+			"chapter": {
+				"1": {
+					"1": {
+						"1": {
+							"who": "You",
+							"message": "What?"
+						},
+						"2": {
+							"who": "You",
+							"message": "Where am i?"
+						},
+						"3": {
+							"who": "You",
+							"message": "A void..."
+						},
+						"4": {
+							"who": "You",
+							"message": "I will try imagine,"
+						},
+						"5": {
+							"who": "You",
+							"message": "Imagine myself at home."
+						},
+						"6": {
+							"who": "You",
+							"message": "At home, in the warm and cozy..."
+						}
+					}
+				}
+			},
+			"nextBtn": "Next",
+			"end1": "Cut-line #",
+			"end2": ", part #",
+			"end3": ", chapter #",
+			"end4": " is finished"
+		}
 	}
 }

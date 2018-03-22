@@ -1,5 +1,5 @@
-var g4m_core = function () {
-	this.fullscreen = [window.screen.width, window.screen.height];
+﻿var g4m_core = function () {
+	this.fullscreen = [window.innerWidth, window.innerHeight];
 	this.newScene = function (wh, name, style) {
 		el = document.createElement('div');
 		var stylee = 'height: ' + wh[1] + 'px; width: ' + wh[0] + 'px; position: relative; ';
@@ -7,13 +7,13 @@ var g4m_core = function () {
 		el.setAttribute('style', stylee);
 		el.className = 'g4m_scene';
 		el.loop_list = [];
+		el.id = name;
 		setInterval(function () {
 			el.time += 1;
 		}, 1);
 		el.name = name;
 		el.startScene = function () {
 			document.body.appendChild(el);
-			this.currentScene = el;
 		};
 		el.newLoop = function (func, id, interval) {
 			el.loop_list[id] = [func, interval];
@@ -99,7 +99,7 @@ var g4m_core = function () {
 		return 'bottom: ' + arr[1] + 'px; left: ' + arr[0] + 'px;';
 	}
 	this.grapicsManager = new Object;
-	this.grapicsManager.fade = function (el, speed) {
+	this.grapicsManager.hide = function (el, speed) {
 		el.style.opacity = 1;
 		var int = setInterval(function () {
 			el.style.opacity -= .1;
