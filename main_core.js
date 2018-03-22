@@ -235,7 +235,7 @@ var preloader2 = function () {
 	var txt = g4m.newObject({
 		type: 'txt',
 		value: all_languages[lang].translateText,
-		position: pm.pos([300, 300]),
+		position: pm.pos([0, 300]),
 		class: "simpleText",
 		style: "color: black"
 	});
