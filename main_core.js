@@ -89,7 +89,7 @@ var cut = function (who, message, chapter, part, id, mode, func, scene) {
 
 var game = function () {
 	//Intro
-	cut(all_languages[lang].cut.chapter['1']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '1', '1', '1', function () {
+	cut(all_languages[lang].cut.chapter['1']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '1', '1', '1', 'full', function () {
 		alert(1);
 		var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
 
@@ -102,7 +102,7 @@ var game = function () {
 
 		scene6.insertObject(player);
 
-		cut(all_languages[lang].cut.chapter['1']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '1', '2', '1', function () {
+		cut(all_languages[lang].cut.chapter['1']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '1', '2', '1', 'mini', function () {
 			alert('ok');
 		}, scene6);
 
