@@ -7,7 +7,12 @@
 	<script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 	<script type="text/javascript">
 		VK.api('users.get', {}, function (data) {
-			alert('Ваше имя: ' + data.response[0].first_name);
+			alert('Ваше имя в именительном падеже: ' + data.response[0].first_name_nom);
+			console.log('Ваше имя в родительном падеже: ' + data.response[0].first_name_gen);
+			console.log('Ваше имя в дательном падеже: ' + data.response[0].first_name_dat);
+			console.log('Ваше имя в винительном падеже: ' + data.response[0].first_name_acc);
+			console.log('Ваше имя в творительном падеже: ' + data.response[0].first_name_inc);
+			console.log('Ваше имя в предложном падеже: ' + data.response[0].first_name_abl);
 		});
 	</script>
 </body>
