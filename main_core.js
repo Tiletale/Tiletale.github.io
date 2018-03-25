@@ -119,7 +119,7 @@ var preloader = function () {
 		value: all_languages[lang].loadingText + '...'
 	};
 
-	txt = g4m.newObject(options)
+	txt = g4m.newObject(options);
 
 	scene2.insertObject(txt);
 
@@ -127,9 +127,6 @@ var preloader = function () {
 	var loading = setInterval(function () {
 		i++;
 		options.value = [all_languages[lang].loadingText + '...', all_languages[lang].loadedText + ' ' + i + '%'];
-		txt.remove();
-		txt = g4m.newObject(options)
-		scene2.insertObject(txt);
 		if (i >= 100) {
 			setTimeout(function () {
 				gm.hide(scene2, 100);
