@@ -128,6 +128,24 @@
 							"who": "You",
 							"message": "At home, in the warm and cozy..."
 						}
+					},
+					"2": {
+						"1": {
+							"who": "You",
+							"message": "Happened?!"
+						},
+						"2": {
+							"who": "You",
+							"message": "Nooooooooo..."
+						},
+						"3": {
+							"who": "You",
+							"message": "What kind of place is it?"
+						},
+						"4": {
+							"who": "You",
+							"message": "It looks like a soooo dark purgatory"
+						}
 					}
 				},
 				"1": {

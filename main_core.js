@@ -18,6 +18,8 @@ lang = en;
 var switchChapter = function (chapter) {
 	var chapter = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
 
+	console.log(chapter);
+
 	var txt = g4m.newObject({
 		type: 'txt',
 		value: all_languages[lang].chapterText + chapter + ' - ' + all_languages[lang].cut.chapter[chapter].title,
