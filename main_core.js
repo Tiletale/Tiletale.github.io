@@ -229,7 +229,7 @@ var menu = function () {
 	objs['hello'] = {
 		type: 'txt',
 		value: all_languages[lang].hello + name,
-		position: pm.pos([0, 450]),
+		position: pm.pos([0, 475]),
 		class: 'simpleText'
 	};
 	objs['title'] = {
