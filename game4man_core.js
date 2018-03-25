@@ -50,48 +50,46 @@
 		else if (obj.type == 'btn') {
 			tag = 'button';
 		}
-		setInterval(function () {
-			var el = document.createElement(tag);
-			el.click = function (func) {
-				el.addEventListener('click', func, false);
-			}
-			if (obj.size) {
-				stylee += 'width: ' + obj.size[0] + 'px; height: ' + obj.size[1] + 'px; ';
-			}
-			if (obj.src) {
-				el.src = obj.src;
-			}
-			if (obj.value) {
-				if (Array.isArray(obj.value)) {
-					for (var i = 0; i < obj.value.length; i++) {
-						el.innerHTML += obj.value[i] + '<br />';
-					}
-				}else{
-					el.innerHTML = obj.value;
+		var el = document.createElement(tag);
+		el.click = function (func) {
+			el.addEventListener('click', func, false);
+		}
+		if (obj.size) {
+			stylee += 'width: ' + obj.size[0] + 'px; height: ' + obj.size[1] + 'px; ';
+		}
+		if (obj.src) {
+			el.src = obj.src;
+		}
+		if (obj.value) {
+			if (Array.isArray(obj.value)) {
+				for (var i = 0; i < obj.value.length; i++) {
+					el.innerHTML += obj.value[i] + '<br />';
 				}
+			}else{
+				el.innerHTML = obj.value;
 			}
-			if(obj.bg_color)
-				stylee += 'background-color: ' + obj.bg_color + '; ';
-			stylee += 'position: absolute; ' + obj.position + ' ';
-			if (obj.style) {
-				stylee += obj.style;
+		}
+		if(obj.bg_color)
+			stylee += 'background-color: ' + obj.bg_color + '; ';
+		stylee += 'position: absolute; ' + obj.position + ' ';
+		if (obj.style) {
+			stylee += obj.style;
+		}
+		if (obj.class)
+			el.className = obj.class;
+		if (obj.id)
+			el.id = obj.id;
+		el.setAttribute('style', stylee);
+		el.remove = function () {
+			el.parentNode.removeChild(el);
+		}
+		if (obj.attrs) {
+			var attrs = JSON.parse('{"attrs":' + obj.attrs + '}');
+			for (var i = attrs.attrs.length - 1; i >= 0; i--) {
+				el.setAttribute(attrs.attrs[i].name, attrs.attrs[i].val);
 			}
-			if (obj.class)
-				el.className = obj.class;
-			if (obj.id)
-				el.id = obj.id;
-			el.setAttribute('style', stylee);
-			el.remove = function () {
-				el.parentNode.removeChild(el);
-			}
-			if (obj.attrs) {
-				var attrs = JSON.parse('{"attrs":' + obj.attrs + '}');
-				for (var i = attrs.attrs.length - 1; i >= 0; i--) {
-					el.setAttribute(attrs.attrs[i].name, attrs.attrs[i].val);
-				}
-			}
-			return el;
-		}, 1000/66);
+		}
+		return el;
 	};
 	this.positionManager = new Object;
 	this.positionManager.pos = function (arr) {
