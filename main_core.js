@@ -75,9 +75,11 @@ var cut = function (who, message, chapter, part, id, mode, func, scene) {
 			if (all_languages[lang].cut.chapter[chapter][part][id1]) {
 				cut(all_languages[lang].cut.chapter[chapter][part][id1].who, all_languages[lang].cut.chapter[chapter][part][id1].message, chapter, part, String(id1), 'mini', func, scene);
 				console.log(all_languages[lang].cut.end1 + id + all_languages[lang].cut.end2 + part + all_languages[lang].cut.end3 + chapter + all_languages[lang].cut.end4);
-				cutScene.remove();
+				txt.remove();
+				next.remove();
 			}else {
-				cutScene.remove();
+				txt.remove();
+				next.remove();
 				func();
 			}
 		});
