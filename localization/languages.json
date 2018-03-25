@@ -1,5 +1,6 @@
 {
 	"ru-RU": {
+		"hello": "Привет, ",
 		"playBtn": "Играть",
 		"optionsBtn": "Настройки",
 		"creditsBtn": "Создатель",
@@ -74,6 +75,7 @@
 		}
 	},
 	"en-EN": {
+		"hello": "Hello, ",
 		"playBtn": "Play",
 		"optionsBtn": "Options",
 		"creditsBtn": "Credits",
