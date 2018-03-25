@@ -29,6 +29,7 @@ var switchChapter = function (chapter) {
 
 	setTimeout(function () {
 		gm.hide(txt, 100);
+		setTimeout(chapterSwitcher.remove, 1000);
 	}, 3500);
 
 	chapterSwitcher.insertObject(txt);
