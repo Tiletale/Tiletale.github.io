@@ -14,7 +14,6 @@ var all_languages = json;
 var ru = 'ru-RU';
 var en = 'en-EN';
 lang = en;
-name = 'Незнакомец Незнакомный';
 var cut = function (who, message, chapter, part, id, mode, func, scene) {
 	if (mode == 'full') {
 		var cutScene = g4m.newScene([width, height], "cutScene" + id, "background-color: black");
@@ -314,4 +313,3 @@ var preloader2 = function () {
 		}
 	}, 3500);
 }
-preloader2();
