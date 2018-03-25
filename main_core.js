@@ -134,7 +134,7 @@ var game = function () {
 
 			scene6.startScene();
 		});
-	}, 6000);
+	}, 4500);
 }
 var preloader = function () {
 	var scene2 = g4m.newScene([width, height], "preloader", 'background-color: black');
