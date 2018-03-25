@@ -9,6 +9,7 @@
 		"backBtn": "Назад",
 		"translateText": "Внимание: Если вы увидите перевод на англ., то у вас может потечь кровь из глаз",
 		"langBtn": "Язык",
+		"chapterText": "Глава #",
 		"creditsText": [
 			"Fourth dimension",
 			"Игра разработана одним человеком",
@@ -20,7 +21,8 @@
 		],
 		"cut": {
 			"chapter": {
-				"1": {
+				"0": {
+					"title": "Начало",
 					"1": {
 						"1": {
 							"who": "Вы",
@@ -65,6 +67,9 @@
 							"message": "Похоже на оооочень тёмное чистилище"
 						}
 					}
+				},
+				"1": {
+					"title": "Новые познания"
 				}
 			},
 			"nextBtn": "Далее",
@@ -84,6 +89,7 @@
 		"backBtn": "Back",
 		"translateText": "Attention: If you will see a translation in English, then you can leak blood from the eyes",
 		"langBtn": "Language",
+		"chapterText": "Chapter #",
 		"creditsText": [
 			"Fourth dimension",
 			"The game is developed by one person",
@@ -95,7 +101,8 @@
 		],
 		"cut": {
 			"chapter": {
-				"1": {
+				"0": {
+					"title": "Intro",
 					"1": {
 						"1": {
 							"who": "You",
@@ -122,6 +129,9 @@
 							"message": "At home, in the warm and cozy..."
 						}
 					}
+				},
+				"1": {
+					"title": "New knowledge"
 				}
 			},
 			"nextBtn": "Next",

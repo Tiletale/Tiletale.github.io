@@ -15,6 +15,23 @@ var ru = 'ru-RU';
 var en = 'en-EN';
 name = 'Аноним Анонимов';
 lang = en;
+var switchChapter = function (chapter) {
+	var chapter = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
+
+	var txt = g4m.newObject({
+		type: 'txt',
+		value: all_languages[lang].chapterText + chapter + ' - ' + all_languages[lang].cut.chapter[String(chapter)].title,
+		position: pm.pos([350, 350])
+	});
+
+	setTimeout(function () {
+		gm.fade(txt);
+	}, 3500);
+
+	chapter.insertObject(txt);
+
+	chapter.startScene();
+}
 var cut = function (who, message, chapter, part, id, mode, func, scene) {
 	if (mode == 'full') {
 		var cutScene = g4m.newScene([width, height], "cutScene" + id, "background-color: black");
@@ -91,24 +108,30 @@ var cut = function (who, message, chapter, part, id, mode, func, scene) {
 
 var game = function () {
 	//Intro
-	cut(all_languages[lang].cut.chapter['1']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '1', '1', '1', 'full', function () {
-		var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
+	switchChapter(0);
+	setTimeout(function () {
+		cut(all_languages[lang].cut.chapter['0']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '0', '1', '1', 'full', function () {
+			var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
 
-		var player = g4m.newObject({
-			type: 'rect',
-			position: pm.pos([0, 0]),
-			bg_color: 'white',
-			size: [50, 50]
+			var player = g4m.newObject({
+				type: 'rect',
+				position: pm.pos([0, 0]),
+				bg_color: 'white',
+				size: [50, 50]
+			});
+
+			scene6.insertObject(player);
+
+			cut(all_languages[lang].cut.chapter['0']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '0', '2', '1', 'mini', function () {
+				gm.hide(scene6, 100);
+				setTimeout(function () {
+					switchChapter(1);
+				}, 1000);
+			}, scene6);
+
+			scene6.startScene();
 		});
-
-		scene6.insertObject(player);
-
-		cut(all_languages[lang].cut.chapter['1']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '1', '2', '1', 'mini', function () {
-			alert('ok');
-		}, scene6);
-
-		scene6.startScene();
-	});
+	}, 2500);
 }
 var preloader = function () {
 	var scene2 = g4m.newScene([width, height], "preloader", 'background-color: black');
