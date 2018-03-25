@@ -16,7 +16,7 @@ var en = 'en-EN';
 name = 'Аноним Анонимов';
 lang = en;
 var switchChapter = function (chapter) {
-	var chapter = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
+	var chapterSwitcher = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
 
 	console.log(chapter);
 
@@ -30,9 +30,9 @@ var switchChapter = function (chapter) {
 		gm.fade(txt);
 	}, 3500);
 
-	chapter.insertObject(txt);
+	chapterSwitcher.insertObject(txt);
 
-	chapter.startScene();
+	chapterSwitcher.startScene();
 }
 var cut = function (who, message, chapter, part, id, mode, func, scene) {
 	if (mode == 'full') {
