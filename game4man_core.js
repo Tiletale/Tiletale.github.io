@@ -54,11 +54,8 @@
 		el.click = function (func) {
 			el.addEventListener('click', func, false);
 		}
-		if (obj.width) {
-			stylee += 'width: ' + obj.width + 'px; ';
-		}
-		if (obj.height) {
-			stylee += 'height: ' + obj.height + 'px; ';
+		if (obj.size) {
+			stylee += 'width: ' + obj.size[0] + 'px; height: ' + obj.size[1] + 'px; ';
 		}
 		if (obj.src) {
 			el.src = obj.src;

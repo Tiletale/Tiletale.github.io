@@ -17,7 +17,7 @@
 			"Youtube-канал создателя:",
 			"https://www.youtube.com/channel/UCFxALLEypCPk4F2jf8z5eOQ"
 		],
-		"cast": {
+		"cut": {
 			"chapter": {
 				"1": {
 					"1": {
@@ -44,6 +44,24 @@
 						"6": {
 							"who": "Вы",
 							"message": "Дома, в тепле и уюте..."
+						}
+					},
+					"2": {
+						"1": {
+							"who": "Вы",
+							"message": "Получилось?!"
+						},
+						"2": {
+							"who": "Вы",
+							"message": "Неееееееет..."
+						},
+						"3": {
+							"who": "Вы",
+							"message": "Что это за место?"
+						},
+						"4": {
+							"who": "Вы",
+							"message": "Похоже на оооочень тёмное чистилище"
 						}
 					}
 				}
@@ -73,7 +91,7 @@
 			"Youtube-channel of the creator:",
 			"https://www.youtube.com/channel/UCFxALLEypCPk4F2jf8z5eOQ"
 		],
-		"cast": {
+		"cut": {
 			"chapter": {
 				"1": {
 					"1": {

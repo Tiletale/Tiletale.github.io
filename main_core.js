@@ -14,51 +14,96 @@ var all_languages = json;
 var ru = 'ru-RU';
 var en = 'en-EN';
 lang = en;
-var cast = function (who, message, chapter, part, id, func) {
-	var castScene = g4m.newScene([width, height], "castScene" + id, "background-color: black");
+var cut = function (who, message, chapter, part, id, mode, func, scene) {
+	if (mode == 'full') {
+		var cutScene = g4m.newScene([width, height], "cutScene" + id, "background-color: black");
 
-	var txt = g4m.newObject({
-		type: 'txt',
-		value: [
-			'[' + who + ']',
-			message
-		],
-		position: pm.pos([300, 300]),
-		class: 'simpleText'
-	});
+		var txt = g4m.newObject({
+			type: 'txt',
+			value: [
+				'[' + who + ']',
+				message
+			],
+			position: pm.pos([300, 300]),
+			class: 'simpleText'
+		});
 
-	var next = g4m.newObject({
-		type: 'txt',
-		value: all_languages[lang].cast['nextBtn'],
-		position: pm.pos([300, 100]),
-		class: 'simpleText'
-	});
+		var next = g4m.newObject({
+			type: 'txt',
+			value: all_languages[lang].cut['nextBtn'],
+			position: pm.pos([300, 100]),
+			class: 'simpleText'
+		});
 
-	next.click(function () {
-		var id1 = parseInt(id) + 1;
-		if (all_languages[lang].cast.chapter[chapter][part][id1]) {
-			cast(all_languages[lang].cast.chapter[chapter][part][id1].who, all_languages[lang].cast.chapter[chapter][part][id1].message, chapter, part, String(id1), func);
-			console.log(all_languages[lang].cast.end1 + id + all_languages[lang].cast.end2 + part + all_languages[lang].cast.end3 + chapter + all_languages[lang].cast.end4);
-			castScene.remove();
-		}else {
-			castScene.remove();
-			func();
-		}
-	});
+		next.click(function () {
+			var id1 = parseInt(id) + 1;
+			if (all_languages[lang].cut.chapter[chapter][part][id1]) {
+				cut(all_languages[lang].cut.chapter[chapter][part][id1].who, all_languages[lang].cut.chapter[chapter][part][id1].message, chapter, part, String(id1), 'full', func);
+				console.log(all_languages[lang].cut.end1 + id + all_languages[lang].cut.end2 + part + all_languages[lang].cut.end3 + chapter + all_languages[lang].cut.end4);
+				cutScene.remove();
+			}else {
+				cutScene.remove();
+				func();
+			}
+		});
 
-	castScene.insertObject(next);
+		cutScene.insertObject(next);
 
-	castScene.insertObject(txt);
+		cutScene.insertObject(txt);
 
-	castScene.startScene();
+		cutScene.startScene();
+	}else if (scene && mode == 'mini') {
+		var txt = g4m.newObject({
+			type: 'txt',
+			value: [
+				'[' + who + ']',
+				message
+			],
+			position: pm.pos([300, 0]),
+			class: 'simpleText'
+		});
+		var next = g4m.newObject({
+			type: 'txt',
+			value: all_languages[lang].cut['nextBtn'],
+			position: pm.pos([300, 100]),
+			class: 'simpleText'
+		});
+
+		next.click(function () {
+			var id1 = parseInt(id) + 1;
+			if (all_languages[lang].cut.chapter[chapter][part][id1]) {
+				cut(all_languages[lang].cut.chapter[chapter][part][id1].who, all_languages[lang].cut.chapter[chapter][part][id1].message, chapter, part, String(id1), 'mini', func, scene);
+				console.log(all_languages[lang].cut.end1 + id + all_languages[lang].cut.end2 + part + all_languages[lang].cut.end3 + chapter + all_languages[lang].cut.end4);
+				cutScene.remove();
+			}else {
+				cutScene.remove();
+				func();
+			}
+		});
+		scene.insertObject(next);
+
+		scene.insertObject(txt);
+	}
 }
 
 var game = function () {
 	//Intro
-	cast(all_languages[lang].cast.chapter['1']['1'][1].who, all_languages[lang].cast.chapter['1']['1'][1].message, '1', '1', '1', function () {
+	cut(all_languages[lang].cut.chapter['1']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '1', '1', '1', function () {
+		alert(1);
 		var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
 
-		//
+		var player = g4m.newObject({
+			type: 'rect',
+			position: pm.pos([0, 0]),
+			bg_color: 'white',
+			size: [50, 50]
+		});
+
+		scene6.insertObject(player);
+
+		cut(all_languages[lang].cut.chapter['1']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '1', '2', '1', function () {
+			alert('ok');
+		}, scene6);
 
 		scene6.startScene();
 	});
