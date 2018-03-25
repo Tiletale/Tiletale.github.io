@@ -313,3 +313,4 @@ var preloader2 = function () {
 		}
 	}, 3500);
 }
+preloader2();
