@@ -6,7 +6,11 @@
 <body style="margin: 0">
 	<script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 	<script type="text/javascript">
-		alert(1);
+		VK.init(function() { 
+			alert(1);
+		}, function() { 
+			alert(0);
+		}, '5.73'); 
 	</script>
 </body>
 </html>
