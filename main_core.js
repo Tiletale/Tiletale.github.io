@@ -23,7 +23,8 @@ var switchChapter = function (chapter) {
 	var txt = g4m.newObject({
 		type: 'txt',
 		value: all_languages[lang].chapterText + chapter + ' - ' + all_languages[lang].cut.chapter[chapter].title,
-		position: pm.pos([350, 350])
+		position: pm.pos([350, 350]),
+		class: "simpleText"
 	});
 
 	setTimeout(function () {
