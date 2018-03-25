@@ -13,6 +13,7 @@ var height = 500;
 var all_languages = json;
 var ru = 'ru-RU';
 var en = 'en-EN';
+name = 'Аноним Анонимов';
 lang = en;
 var cut = function (who, message, chapter, part, id, mode, func, scene) {
 	if (mode == 'full') {
