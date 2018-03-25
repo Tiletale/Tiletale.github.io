@@ -27,7 +27,7 @@ var switchChapter = function (chapter) {
 	});
 
 	setTimeout(function () {
-		gm.fade(txt);
+		gm.hide(txt, 100);
 	}, 3500);
 
 	chapterSwitcher.insertObject(txt);
@@ -112,7 +112,7 @@ var game = function () {
 	//Intro
 	switchChapter('0');
 	setTimeout(function () {
-		cut(all_languages[lang].cut.chapter['0']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '0', '1', '1', 'full', function () {
+		cut(all_languages[lang].cut.chapter['0']['1'][1].who, all_languages[lang].cut.chapter['0']['1'][1].message, '0', '1', '1', 'full', function () {
 			var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
 
 			var player = g4m.newObject({
@@ -124,7 +124,7 @@ var game = function () {
 
 			scene6.insertObject(player);
 
-			cut(all_languages[lang].cut.chapter['0']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '0', '2', '1', 'mini', function () {
+			cut(all_languages[lang].cut.chapter['0']['2'][1].who, all_languages[lang].cut.chapter['0']['2'][1].message, '0', '2', '1', 'mini', function () {
 				gm.hide(scene6, 100);
 				setTimeout(function () {
 					switchChapter('1');
@@ -133,7 +133,7 @@ var game = function () {
 
 			scene6.startScene();
 		});
-	}, 2500);
+	}, 6000);
 }
 var preloader = function () {
 	var scene2 = g4m.newScene([width, height], "preloader", 'background-color: black');
