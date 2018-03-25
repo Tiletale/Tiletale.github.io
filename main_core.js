@@ -15,9 +15,6 @@ var ru = 'ru-RU';
 var en = 'en-EN';
 lang = en;
 name = 'Незнакомец Незнакомный';
-VK.api('users.get', {}, function (data) {
-	name = data.response[0].first_name + ' ' + data.response[0].last_name;
-});
 var cut = function (who, message, chapter, part, id, mode, func, scene) {
 	if (mode == 'full') {
 		var cutScene = g4m.newScene([width, height], "cutScene" + id, "background-color: black");
