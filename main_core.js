@@ -110,7 +110,7 @@ var cut = function (who, message, chapter, part, id, mode, func, scene) {
 
 var game = function () {
 	//Intro
-	switchChapter(0);
+	switchChapter('0');
 	setTimeout(function () {
 		cut(all_languages[lang].cut.chapter['0']['1'][1].who, all_languages[lang].cut.chapter['1']['1'][1].message, '0', '1', '1', 'full', function () {
 			var scene6 = g4m.newScene([width, height], "gameEventChapter1", "background-color: black");
@@ -127,7 +127,7 @@ var game = function () {
 			cut(all_languages[lang].cut.chapter['0']['2'][1].who, all_languages[lang].cut.chapter['1']['2'][1].message, '0', '2', '1', 'mini', function () {
 				gm.hide(scene6, 100);
 				setTimeout(function () {
-					switchChapter(1);
+					switchChapter('1');
 				}, 1000);
 			}, scene6);
 
