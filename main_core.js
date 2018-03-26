@@ -13,7 +13,7 @@ var height = 500;
 var all_languages = json;
 var ru = 'ru-RU';
 var en = 'en-EN';
-name = 'Аноним Анонимов';
+user_data['name'] = 'Аноним Анонимов';
 lang = en;
 var switchChapter = function (chapter) {
 	var chapterSwitcher = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
@@ -254,7 +254,7 @@ var menu = function () {
 	var res = [];
 	objs['hello'] = {
 		type: 'txt',
-		value: all_languages[lang].hello + name,
+		value: all_languages[lang].hello + user_data['name'],
 		position: pm.pos([0, 475]),
 		class: 'simpleText'
 	};
