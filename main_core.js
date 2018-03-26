@@ -26,7 +26,7 @@ var switchChapter = function (chapter) {
 	});
 
 	setTimeout(function () {
-		gm.hide(chapterSwitcher, 100);
+		gm.hide(chapterSwitcher, 250);
 	}, 3500);
 
 	chapterSwitcher.insertObject(txt);
@@ -132,7 +132,7 @@ var game = function () {
 
 			scene6.startScene();
 		});
-	}, 4500);
+	}, 6000);
 }
 var preloader = function () {
 	var scene2 = g4m.newScene([width, height], "preloader", 'background-color: black');
