@@ -13,7 +13,6 @@ var height = 500;
 var all_languages = json;
 var ru = 'ru-RU';
 var en = 'en-EN';
-user_data.full_name = 'Аноним Анонимов';
 lang = en;
 var switchChapter = function (chapter) {
 	var chapterSwitcher = g4m.newScene([width, height], "chapterSwitcher", "background-color: black");	
@@ -252,12 +251,14 @@ var menu = function () {
 
 	var objs = [];
 	var res = [];
-	objs['hello'] = {
-		type: 'txt',
-		value: all_languages[lang].hello + user_data.full_name,
-		position: pm.pos([0, 475]),
-		class: 'simpleText'
-	};
+	if (user_data.full_name) {
+		objs['hello'] = {
+			type: 'txt',
+			value: all_languages[lang].hello + user_data.full_name,
+			position: pm.pos([0, 475]),
+			class: 'simpleText'
+		};
+	}
 	objs['title'] = {
 		type: 'txt',
 		value: 'Fourth dimension',
