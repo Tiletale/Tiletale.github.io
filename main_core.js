@@ -267,7 +267,8 @@ var menu = function () {
 			type: 'image',
 			position: pm.pos([0, 450]),
 			size: [50, 50],
-			src: avatar
+			src: avatar,
+			style: 'border-radius: 10px;'
 		};
 	}
 	objs['title'] = {
