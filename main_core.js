@@ -258,7 +258,7 @@ var menu = function () {
 				all_languages[lang].hello,
 				full_name
 			],
-			position: pm.pos([60, 510]),
+			position: pm.pos([60, 456]),
 			class: 'simpleText'
 		};
 	}
