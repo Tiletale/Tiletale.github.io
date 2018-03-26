@@ -254,9 +254,20 @@ var menu = function () {
 	if (full_name) {
 		objs['hello'] = {
 			type: 'txt',
-			value: all_languages[lang].hello + full_name,
-			position: pm.pos([0, 475]),
+			value: [
+				all_languages[lang].hello,
+				full_name
+			],
+			position: pm.pos([60, 475]),
 			class: 'simpleText'
+		};
+	}
+	if (avatar) {
+		objs['avatar'] = {
+			type: 'img',
+			position: pm.pos([0, 475]),
+			size: [50, 50],
+			src: avatar
 		};
 	}
 	objs['title'] = {
