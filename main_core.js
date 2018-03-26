@@ -251,10 +251,10 @@ var menu = function () {
 
 	var objs = [];
 	var res = [];
-	if (user_data.full_name) {
+	if (full_name) {
 		objs['hello'] = {
 			type: 'txt',
-			value: all_languages[lang].hello + user_data.full_name,
+			value: all_languages[lang].hello + full_name,
 			position: pm.pos([0, 475]),
 			class: 'simpleText'
 		};
