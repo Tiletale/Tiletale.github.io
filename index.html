@@ -11,9 +11,9 @@
 	<script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
 	<script type="text/javascript">
 		VK.api('users.get', {"fields": "photo_50"}, function (data) {
-			user_data = [];
-			user_data['name'] = data.response[0].first_name + ' ' + data.response[0].last_name;
-			user_data['avatar'] = data.response[0].photo_50;
+			user_data = {};
+			user_data.full_name = data.response[0].first_name + ' ' + data.response[0].last_name;
+			user_data.avatar = data.response[0].photo_50;
 			console.log(user_data['avatar']);
 		});
 	</script>
