@@ -258,14 +258,14 @@ var menu = function () {
 				all_languages[lang].hello,
 				full_name
 			],
-			position: pm.pos([60, 475]),
+			position: pm.pos([60, 510]),
 			class: 'simpleText'
 		};
 	}
 	if (avatar) {
 		objs['avatar'] = {
 			type: 'img',
-			position: pm.pos([0, 475]),
+			position: pm.pos([0, 450]),
 			size: [50, 50],
 			src: avatar
 		};
